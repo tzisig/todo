@@ -46,15 +46,15 @@
   <input class="btn btn-info" type="submit" value="Create Task">
  </form>
 
- {% for task in tasks %}
+ {% for list in tasks %}
 
  <div class="item-row">
-  <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
-  <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
-  {% if task.complete == True %}
-  <strike>{{task}}</strike>
+  <a class="btn btn-sm btn-info" href="{% url 'update_task' list.id %}">Update</a>
+  <a class="btn btn-sm btn-danger" href="{% url 'delete' list.id %}">Delete</a>
+  {% if list.complete == True %}
+  <strike>{{list}}</strike>
   {% else %}
-  <span>{{task}}</span>
+  <span>{{list}}</span>
   {% endif %}
  </div>
  {% endfor %}
